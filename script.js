@@ -1,15 +1,24 @@
 const pages = document.querySelectorAll(".page");
-const pageSound = document.getElementById("pageSound");
+const music = document.getElementById("bgMusic");
+const sound = document.getElementById("pageSound");
 
-let currentPage = 0;
+let index = 0;
+let started = false;
 
-document.addEventListener("click", () => {
-  if (currentPage < pages.length) {
-    pages[currentPage].classList.add("flip");
-    pageSound.play();
-    currentPage++;
+music.volume = 0.25;
+sound.volume = 0.15;
+
+function nextPage() {
+  if (!started) {
+    music.play();
+    started = true;
   }
-});
 
-
-
+  if (index < pages.length - 1) {
+    pages[index].classList.remove("active");
+    index++;
+    pages[index].classList.add("active");
+    sound.currentTime = 0;
+    sound.play();
+  }
+}
