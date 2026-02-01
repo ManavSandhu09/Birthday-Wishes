@@ -8,7 +8,6 @@
   position: fixed;
   inset: 0;
   background: url("bg-collage.png") center/cover no-repeat;
-  filter: blur(2px) brightness(0.75);
   z-index: -1;
 }
 
@@ -119,6 +118,7 @@ p {
   opacity: 0.6;
   margin-top: 10px;
 }
+
 
 
 
