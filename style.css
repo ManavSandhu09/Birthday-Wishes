@@ -34,13 +34,23 @@ body {
 
 /* pages */
 .page {
-  position: absolute;
+  position: relative;
   inset: 0;
   padding: 40px;
   background: radial-gradient(circle, #fff8e8 60%, #eadfc8 100%);
   opacity: 0;
   transition: opacity 1s ease, transform 1s ease;
   transform: translateX(10px);
+}
+.page-image {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 180px;
+  opacity: 0.95;
+  transform: rotate(-4deg);
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
+  pointer-events: none; /* so clicks still flip pages */
 }
 
 .page.active {
@@ -118,6 +128,7 @@ p {
   opacity: 0.6;
   margin-top: 10px;
 }
+
 
 
 
