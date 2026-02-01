@@ -3,7 +3,7 @@
   --ink: #4a2a2a;
 }
 
-/* Responsive background */
+/* background */
 .background {
   position: fixed;
   inset: 0;
@@ -11,24 +11,20 @@
   z-index: -1;
 }
 
-/* Body */
 body {
   margin: 0;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Solway', serif;
-  padding: 20px; /* prevent edges from cutting off */
-  box-sizing: border-box;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
-/* Book */
+/* book */
 .book {
-  width: 90%;
-  max-width: 420px;
-  aspect-ratio: 420 / 540; /* maintain original proportion */
+  width: 420px;
+  height: 540px;
   background: var(--paper);
   box-shadow: 0 30px 60px rgba(0,0,0,0.5);
   border-radius: 6px;
@@ -36,22 +32,22 @@ body {
   cursor: pointer;
 }
 
-/* Pages */
+/* pages */
 .page {
   position: absolute;
   inset: 0;
-  padding: 5%;
+  padding: 40px;
   background: radial-gradient(circle, #fff8e8 60%, #eadfc8 100%);
   opacity: 0;
   transition: opacity 1s ease, transform 1s ease;
-  transform: translateX(2%);
+  transform: translateX(10px);
 }
 .page.active {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* Text */
+/* text */
 h1 {
   text-align: center;
   color: #3d1c1c;
@@ -59,14 +55,12 @@ h1 {
 
 .name {
   font-family: 'Caveat', cursive;
-  font-size: 6vw; /* scales with screen */
-  max-font-size: 3.2rem;
+  font-size: 3.2rem;
 }
 
 p {
   font-family: 'Caveat', cursive;
-  font-size: 4vw; /* scales with screen */
-  max-font-size: 1.6rem;
+  font-size: 1.6rem;
   color: var(--ink);
   line-height: 1.4;
 }
@@ -77,27 +71,24 @@ p {
   margin-top: 20px;
 }
 
-/* Image */
+/* image */
 .photo {
-  width: 50%;
-  max-width: 220px;
+  width: 220px;
   margin: 20px auto 0;
   display: block;
   border-radius: 4px;
 }
 
-/* Final page */
+/* final page */
 .final-line {
-  font-size: 5vw;
-  max-font-size: 1.8rem;
+  font-size: 1.8rem;
   text-align: center;
-  margin-top: 10%;
+  margin-top: 80px;
 }
 
-/* Signature */
+/* signature */
 .signature svg {
-  width: 50%;
-  max-width: 200px;
+  width: 200px;
   margin: 40px auto 10px;
   display: block;
 }
@@ -109,6 +100,10 @@ p {
   stroke-dasharray: 600;
   stroke-dashoffset: 600;
   animation: write 4s ease forwards;
+}
+
+@keyframes write {
+  to { stroke-dashoffset: 0; }
 }
 
 .signature span {
@@ -123,17 +118,7 @@ p {
   margin-top: 10px;
 }
 
-/* Keyframes */
-@keyframes write {
-  to { stroke-dashoffset: 0; }
-}
 
-/* Optional: small screens tweaks */
-@media (max-width: 480px) {
-  .book {
-    padding: 10px;
-  }
-  .page {
-    padding: 8%;
-  }
-}
+
+
+
